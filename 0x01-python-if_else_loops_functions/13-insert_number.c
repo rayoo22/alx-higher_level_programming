@@ -50,7 +50,7 @@ listint_t *insert_node(listint_t **head, int number)
 			return (new);
 		}
 
-		if (((new->n >tmp->n) && (new->n < (tmp->next)->)) || (new->n == tmp->n))
+		if (((new->n > tmp->n) && (new->n < (tmp->next)->n)) || (new->n == tmp->n))
 		{
 			new->next = tmp->next;
 			tmp->next = new;
