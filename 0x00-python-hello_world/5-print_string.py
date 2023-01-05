@@ -1,5 +1,3 @@
 #!/usr/bin/python3
 str = "Holberton School"
-if True:
-    print(f"{str}{str}{str}")
-print(str[0:10])
+print("{}\n{}".format(3*str, str[0:9]))
