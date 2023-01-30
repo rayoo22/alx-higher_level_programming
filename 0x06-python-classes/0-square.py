@@ -2,6 +2,9 @@
 """
     Square module
 """
+
 class Square:
+
     """ Declaring the Square class """
+
     pass
