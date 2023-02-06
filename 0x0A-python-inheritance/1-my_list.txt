@@ -1,0 +1,47 @@
+>>> from importlib import import_module
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList() 
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+>>> l = MyList()
+>>> l.append(-300)
+>>> l.append(50)
+>>> l.append(-1)
+>>> print(l)
+[-300, 50, -1]
+>>> id(l) is not id(l.print_sorted())
+[-300, -1, 50]
+True
+>>> solo = MyList()
+>>> solo.append(-99999)
+>>> print(solo)
+[-99999]
+
+>>> solo.print_sorted()
+[-99999]
+>>> empty = MyList()
+>>> print(empty)
+[]
+>>> empty.print_sorted()
+[]
+
+>>> type(MyList())
+<class '1-my_list.MyList'>
+>>> isinstance(MyList, object)
+True
+>>> isinstance(MyList, list)
+False
+>>> issubclass(MyList, list)
+True
+>>> 'print_sorted' in dir(MyList)
+True
