@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Base Module """
 
-class Base:
+class Base():
     """
     __nb_objects: private class attribute
     def __init__(self, id=None): class constructor
