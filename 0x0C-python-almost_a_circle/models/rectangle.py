@@ -11,50 +11,66 @@ class Rectangle(Base):
     __y -> y
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        """ initializer """
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
         super().__init__(id)
 
-        @property
-        def set_width(self, width):
-            """setter for width """
-            Rectangle.__width = width
+    @width.setter
+    def set_width(self, value):
+        """setter for width """
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
-        @width.property
-        def get_width(self):
-            """Returns the publicized width atribute"""
-            return Rectangle.__width
+    @property
+    def get_width(self):
+        """Returns the publicized width atribute"""
+        return self.__width
 
-        @property
-        def set_height(self, height):
-            """setter for height"""
-            Rectangle.__height = height
+    @height.setter
+    def set_height(self, value):
+        """setter for height"""
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-        @height.property
-        def get_height(self):
-            """Returns publicized height attribute """
-            return Rectangle.__height
+    @property
+    def get_height(self):
+        """Returns publicized height attribute """
+        return self.__height
 
-        @property
-        def set_x(self, x):
-            """setter for x """
-            Rectangle.__x = x
+    @x.setter
+    def set_x(self, value):
+        """setter for x """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
-        @x.property
-        def get_x(self):
-            """returns pulicized x atribute"""
-            return Rectangle.__x
+    @property
+    def get_x(self):
+        """returns pulicized x atribute"""
+        return Rectangle.__x
 
-        @property
-        def set_y(self, y):
-            """ setter for y """
-            Rectangle.__y = y
+    @y.setter
+    def set_y(self, value):
+        """ setter for y """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
 
-        @y.property
-        def get_y(self):
-            """returns publicized y attribute """
-            return Rectangle.__y
-
+    @property
+    def get_y(self):
+        """returns publicized y attribute """
+        return self.__y
