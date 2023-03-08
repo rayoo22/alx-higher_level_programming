@@ -11,8 +11,8 @@ class Base():
 
     def __init__(self, id=None):
         """ Initialize id, increment class attribute if no id is set as id """
-        if id is not None:
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
             self.id = id
-
-        Base.__nb_objects += 1
-        self.id = Base.__nb_objects
