@@ -12,15 +12,15 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ initializer """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
         super().__init__(id)
 
     @width.setter
-    def set_width(self, value):
+    def width(self, value):
         """setter for width """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -29,12 +29,12 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    def get_width(self):
+    def width(self):
         """Returns the publicized width atribute"""
         return self.__width
 
     @height.setter
-    def set_height(self, value):
+    def height(self, value):
         """setter for height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -43,12 +43,12 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    def get_height(self):
+    def height(self):
         """Returns publicized height attribute """
         return self.__height
 
     @x.setter
-    def set_x(self, value):
+    def x(self, value):
         """setter for x """
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -57,12 +57,12 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    def get_x(self):
+    def x(self):
         """returns pulicized x atribute"""
-        return Rectangle.__x
+        return self.__x
 
     @y.setter
-    def set_y(self, value):
+    def y(self, value):
         """ setter for y """
         if type(value) is not int:
             raise TypeError("y must be an integer")
@@ -71,6 +71,6 @@ class Rectangle(Base):
         self.__y = value
 
     @property
-    def get_y(self):
+    def y(self):
         """returns publicized y attribute """
         return self.__y
