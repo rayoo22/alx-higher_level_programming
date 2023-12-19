@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+""" Square class """
 class Square:
-    """ defines a square by size """
+    """ contents of the square class """
     def __init__(self, size=0):
-        """ Initializer, private instance variable """
+        """
+        Args:
+            size: size of square object created
+        """
         self.__size = size
 
         if isinstance(size, int) is not True:
@@ -12,14 +16,36 @@ class Square:
     
     @property
     def size(self):
-        """ getter """
+        """
+        getter : retrieves the size set
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """ setter """
+        """ 
+        Args:
+            value: variable to be set
+        """
         self.__size = value
 
     def area(self):
-        """ area of square """
+        """ 
+        calcultes area of square
+
+        Returns:
+            area of square
+        """
         return self.__size ** 2
+
+    def my_print(self):
+        """
+        prints square using #
+        """
+        if self.__size == 0:
+            print('\n', end='')
+        else:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print('#', end='')
+                print()
