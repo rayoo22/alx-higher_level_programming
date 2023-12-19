@@ -7,7 +7,6 @@ class Square:
         object initializer
 
         Args:
-            self: for object created
             size: attribute for the object created
         """
         self.__size = size
