@@ -2,7 +2,13 @@
 class Square:
     """ defines a square by size """
     def __init__(self, size=0):
-        """ private instance variable """
+        """
+        object initializer
+
+        Args:
+            self: initializer for obj created
+            size: attribute for square object created
+        """
         self.__size = size
 
         if not type(size) is int:
@@ -11,4 +17,10 @@ class Square:
             raise ValueError("size must be >= 0")
 
     def area(self):
+        """
+        calculates area of square object created
+
+        Args:
+            self: initializer for object created
+        """
         return self.__size ** 2
