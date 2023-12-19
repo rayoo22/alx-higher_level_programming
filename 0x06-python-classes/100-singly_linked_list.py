@@ -3,15 +3,16 @@
 class Node:
     """ contents of the Node class """
     def __init__(self, data, next_node=None):
-        self.__data = data
-        self.__next_node = next_node
+        """
+        initializes node
+        Args:
+            data: private attribute
+            next_node: private attribute
+        """
+        self.data = data
+        self.next_node = next_node
 
-        if isinstance(data, int) is not True:
-            raise TypeError("data must be an integer")
-        
-        elif isinstance(next_node, Node) is not True & next_node is not None:
-            raise TypeError("next_node must be a Node object")
-
+    
     @property
     def data(self):
         """
@@ -23,8 +24,11 @@ class Node:
     def data(self, value):
         """
         Args:
-            value:
-         """
+            value: sets data to value of int
+        """
+        if type(value) is not int:
+            raise TypeError("data must be an integer")
+
         self.__data = value
 
     @property
@@ -38,16 +42,38 @@ class Node:
     def next_node(self, value):
         """
         Args:
-            value:
+            value: sets next_node if value is next_node or None
         """
+        if type(value) is not Node and value is not None:
+            raise TypeError("next_node must be a Node object")
+
         self.__next_node = value
 
-""" SinglyLinkedList class """
+
 class SinglyLinkedList:
+    """
+    definition of singly linked list
+
+    Args:
+        head: private
+
+    Functions:
+        __init__(self)
+        sorted_insert(self, value)
+    """
+
     def __init__(self):
+        """
+        initizes singly linked list
+        Attributes:
+            head: private
+        """
         self.__head = None
     
     def __str__(self):
+        """
+        string representation of singly linked list neaded to print
+        """
         string = ""
         tmp = self.__head
         while tmp is not None:
@@ -58,6 +84,12 @@ class SinglyLinkedList:
         return string
 
     def sorted_insert(self, value):
+        """
+        inserts new nodes into singly linked list in sorted order
+        
+        Args:
+            value: int fata for the node
+        """
         new = Node(value)
         if self.__head is None:
             self.__head = new
