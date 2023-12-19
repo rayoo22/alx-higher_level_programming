@@ -9,7 +9,7 @@ class Node:
         if isinstance(data, int) is not True:
             raise TypeError("data must be an integer")
         
-        elif isinstance(next_node, Node) != True & next_node != None:
+        elif isinstance(next_node, Node) is not True & next_node is not None:
             raise TypeError("next_node must be a Node object")
 
     @property
