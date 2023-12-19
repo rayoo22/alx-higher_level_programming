@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+""" class Square """
 class Square:
     """ defines a square by size """
     def __init__(self, size=0):
-        """ private instance variable """
+        """
+        object initializer
+
+        Args:
+            self: for object created
+            size: attribute for the object created
+        """
         self.__size = size
 
         if not type(size) is int:
