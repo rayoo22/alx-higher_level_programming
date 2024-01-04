@@ -13,7 +13,6 @@ class Rectangle:
             width: width of rectangle object
             height: height of rectangle object
         """
-
         self.width = width
         self.height = height
         
@@ -22,7 +21,6 @@ class Rectangle:
         """
         property getter
         """
-
         return self.__width
 
     @width.setter
@@ -31,7 +29,6 @@ class Rectangle:
         Args:
             value: property setter
         """
-
         if isinstance(self.__width, int) is not True:
             raise TypeError("width must be an integer")
         elif self.__width < 0:
@@ -44,7 +41,6 @@ class Rectangle:
         """
         property getter
         """
-
         return self.__height
 
     @height.setter
@@ -53,7 +49,6 @@ class Rectangle:
         Args:
            value: property setter
         """
-
         if isinstance(self.__height, int) is not True:
             raise TypeError("height must be an integer")
         elif self.__height < 0:
