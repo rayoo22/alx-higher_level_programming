@@ -74,13 +74,6 @@ class Rectangle:
 
         return perimeter
 
-    def print_rectangle(self):
-        """ prints a rectangle """
-        for i in range(self.__width):
-            for j in range(self.__height):
-                print("#", end='')
-            print()
-
     def __str__(self):
-        rec = Rectangle.print_rectangle()
-        return str(rec)
+        """ printing string representation of rectangle """
+        return '\n'.join('#' * self.__width for _ in range(self.__height))
