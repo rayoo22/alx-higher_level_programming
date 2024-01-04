@@ -21,7 +21,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """ property getter """
+        """property getter"""
         return self.__width
 
     @width.setter
@@ -35,7 +35,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ property getter """
+        """property getter"""
         return self.__height
 
     @height.setter
@@ -48,12 +48,12 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        """ Returns: area of rectangle """
+        """Returns: area of rectangle"""
         area = self.__width * self.__height
         return area
 
     def perimeter(self):
-        """ Returns the perimeter of rectangle object """
+        """Returns the perimeter of rectangle object"""
         if self.__width == 0 or self.__height == 0:
             perimeter = 0
         else:
@@ -62,17 +62,17 @@ class Rectangle:
         return perimeter
 
     def __str__(self):
-        """ printing string representation of rectangle """
+        """printing string representation of rectangle"""
         if width == 0 | height == 0:
             return ""
 
         return '\n'.join(Rectangle.print_symbol * self.__width for _ in range(self.__height))
 
     def __repr__(self):
-        """ prints formal str representation of rectangle """
+        """prints formal str representation of rectangle"""
         return "Rectangle ({}, {})".format(self.__width, self.__height)
     def __del__(self):
-        """ deltes rectangle object """
+        """deletes rectangle object"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
@@ -84,6 +84,9 @@ class Rectangle:
 
         Returns:
             The biggest rectangle object, based on their area()
+
+        Raises:
+            TypeError: raised if rect_1 or rect_2 aren't object of Rectangle class
         """
         if isinstance(rect_1, Rectangle) is not True:
             raise TypeError("rect_1 must be an instance of Rectangle")
