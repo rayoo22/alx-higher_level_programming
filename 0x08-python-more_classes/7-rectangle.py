@@ -76,8 +76,7 @@ class Rectangle:
 
     def __repr__(self):
         """ prints formal str representation of rectangle """
-        return '\n'.join(Rectangle.print_symbol * self.__width for _ in range(self.__height))
-
+        return "Rectangle ({}, {})".format(self.__width, self.__height)
     def __del__(self):
         """ deltes rectangle object """
         Rectangle.number_of_instances -= 1
