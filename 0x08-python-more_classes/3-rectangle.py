@@ -82,5 +82,5 @@ class Rectangle:
             print()
 
     def __str__(self):
-        rec = print_rectangle()
+        rec = Rectangle.print_rectangle()
         return str(rec)
