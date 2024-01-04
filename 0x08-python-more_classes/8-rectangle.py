@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" The Rectangle Module
-"""
+"""The Rectangle Module"""
 
 
 class Rectangle:
@@ -27,10 +26,6 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """
-        Args:
-            value: property setter
-        """
         if isinstance(self.__width, int) is not True:
             raise TypeError("width must be an integer")
         elif self.__width < 0:
@@ -45,10 +40,6 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """
-        Args:
-           value: property setter
-        """
         if isinstance(self.__height, int) is not True:
             raise TypeError("height must be an integer")
         elif self.__height < 0:
@@ -63,7 +54,7 @@ class Rectangle:
 
     def perimeter(self):
         """ Returns the perimeter of rectangle object """
-        if self.__width == 0 | self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             perimeter = 0
         else:
             perimeter = (self.__width + self.__height) * 2
@@ -86,7 +77,8 @@ class Rectangle:
         print("Bye rectangle...")
 
     def bigger_or_equal(rect_1, rect_2):
-        """Args:
+        """
+        Args:
             rect_1: an object of Rectangle class
             rect_2: an object of Rectangle class
 
