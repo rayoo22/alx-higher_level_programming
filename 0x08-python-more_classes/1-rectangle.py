@@ -5,12 +5,6 @@
 
 class Rectangle:
     """
-    The Rectangle class
-
-    Args:
-        width: the width of the retangle
-        height: the height of the rectangle
-
     Attributes:
         width: width of rectangle
         height: height of rectangle
