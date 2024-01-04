@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-""" The Rectangle Module
-"""
+"""The Rectangle Module"""
 
 
 class Rectangle:
-    """ Rectangle class """
+    """Rectangle class"""
     
     def __init__(self, width=0, height=0):
         """Initilizes when object is created
@@ -36,10 +35,6 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Getter for the height sttribute
-        Args:
-           value: property setter
-        """
         if isinstance(self.__height, int) is not True:
             raise TypeError("height must be an integer")
         elif self.__height < 0:
