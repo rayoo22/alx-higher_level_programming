@@ -4,11 +4,9 @@
 
 
 class Rectangle:
-    """
-    Rectangle class
-    """
+    """ Rectangle class """
     def __init__(self, width=0, height=0):
-        """
+        """Initilizes when object is created
         Args:
             width: width of rectangle object
             height: height of rectangle object
@@ -18,9 +16,7 @@ class Rectangle:
         
     @property
     def width(self):
-        """
-        property getter
-        """
+        """ property getter """
         return self.__width
 
     @width.setter
@@ -38,9 +34,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-        property getter
-        """
+        """ property getter """
         return self.__height
 
     @height.setter
