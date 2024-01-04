@@ -32,16 +32,28 @@ class Rectangle:
 
     @property
     def width(self):
+        """ property getter
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        Args:
+            value: sets the width attribute
+        """
         self.__width = value
 
     @property
     def height(self):
+        """ property getter
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Args:
+            value: sets the height attribute
+        """
         self.__height = value
