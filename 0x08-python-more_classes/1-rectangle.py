@@ -7,7 +7,7 @@ class Rectangle:
     """
     Rectangle class
     """
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """
         Args:
             width: width of rectangle object
