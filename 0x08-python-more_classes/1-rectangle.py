@@ -5,6 +5,7 @@
 
 class Rectangle:
     """ Rectangle class """
+    
     def __init__(self, width=0, height=0):
         """Initilizes when object is created
         Args:
@@ -21,10 +22,6 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Getter for the width attribute
-        Args:
-            value: property setter
-        """
         if isinstance(self.__width, int) is not True:
             raise TypeError("width must be an integer")
         elif self.__width < 0:
