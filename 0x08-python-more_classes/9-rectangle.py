@@ -72,7 +72,7 @@ class Rectangle:
 
     def __str__(self):
         """ printing string representation of rectangle """
-        if width == 0 | height == 0:
+        if self.__width == 0 | self.__height == 0:
             return ""
 
         return '\n'.join(Rectangle.print_symbol * self.__width for _ in range(self.__height))
@@ -107,3 +107,12 @@ class Rectangle:
                 return rect_1
             else:
                 return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Args:
+                size: side of the square
+            Returns:
+                a new rectangle instance with width==height==size
+        """
+        return Rectangle(size, size)
