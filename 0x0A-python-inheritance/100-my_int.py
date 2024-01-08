@@ -3,5 +3,5 @@
 
 
 class MyInt(int):
-    """inheritss from integer class"""
-    
+    """inherits from integer class"""
+    if type
