@@ -8,8 +8,8 @@ def is_kind_of_class(obj, a_class):
         obj: instace to check its derivation
         a_class: class or inherited class to check instance derivation
 
-        Returns:
-            True if obj is an instnace of a_class or inherited class of a_class, otherwise False.
+    Returns:
+        True if obj is an instnace of a_class or inherited class of a_class, otherwise False.
     """
     if isinstance(obj, a_class):
         return True
