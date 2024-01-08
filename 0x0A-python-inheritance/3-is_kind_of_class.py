@@ -3,12 +3,12 @@
 
 
 def is_kind_of_class(obj, a_class):
-    """checks if obj is an instnace of, or if obj is an instnace of a class that inherited from
+    """checks if obj is an instance of, or if obj is an instnace of a class that inherited from
     Args:
         obj: instace to check its derivation
-        a_class: classs of inherited class to check instnace derivation
+        a_class: class or inherited class to check instance derivation
 
-        Return:
+        Returns:
             True if obj is an instnace of a_class or inherited class of a_class, otherwise False.
     """
     if isinstance(obj, a_class):
