@@ -19,7 +19,8 @@ class Student:
         if isinstance(self, (str, int, bool)):
                 return self
         elif isinstance(self, dict):
-            return {key: Student.to_json(value) for key, value in self.items()}
+            return {key: Student.to_json(value) for key, value
+                    in self.items()}
         elif isinstance(self, list):
             return [Student.to_json(item) for item in self]
         elif hasattr(self, '__dict__'):
