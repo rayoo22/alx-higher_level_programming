@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 10-student"""
+"""Module 11-student"""
 
 
 class Student:
@@ -17,12 +17,14 @@ class Student:
 
     def to_json(self, attrs=None):
         """gets dict representation of a Student object"""
-        if attrs is None:
-            return self.__dict__
-        new_dict = {}
-        for a in attrs:
+        if (type(attrs) == list and all(type(ele) == str for ele in attrs)):
+            return {k: getattr(self, k) for k in attrs if (self, k)}
+        return self.__dict__
+
+    def reload_from_json(self, json):
+        """replaces all attributes of the student instance"""
+        for key in json:
             try:
-                new_dict[a] = self.__dict__[a]
+                setattr(self, key,json[key])
             except:
                 pass
-        return new_dict
