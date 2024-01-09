@@ -16,10 +16,17 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """gets dict representation of a Student object"""
+        """gets dict representation of a Student object
+        Args:
+            attrs: attrbutes to be represented in JSON format
+        Returns:
+            dictionary represention of an object
+        """
         if attrs is None:
             return self.__dict__
+
         new_dict = {}
+
         for a in attrs:
             try:
                 new_dict[a] = self.__dict__[a]
