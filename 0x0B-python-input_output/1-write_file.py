@@ -10,16 +10,11 @@ def write_file(filename="", text=""):
     Returns:
         The number of characters written
     """
-    with open(filename, mode='w', encoding='utf-8') as myFile:
+    with open(filename, mode="w", encoding="utf-8") as myFile:
         myFile.write(text)
 
-    with open(filename, mode='r', encoding="utf-8") as myFile:
+    with open(filename, mode="r", encoding="utf-8") as myFile:
         readtext = myFile.read()
-        
-        count = 0
 
-        wordlist = readtext.split()
-
-        for word in wordlist:
-            count += len(word)
-    return count
+        char_count = len(readtext)
+        return char_count
