@@ -1,4 +1,4 @@
-#!/usr/ib/python3
+#!/usr/bin/python3
 """Module 6-load_from_json_file"""
 import json
 
@@ -8,5 +8,5 @@ def load_from_json_file(filename):
     Args:
         filename: file to create an object from
     """
-    with open(filename, "r") as myFile:
-        python_object = json.load(myFile)
+    with open(filename, mode="r") as myFile:
+        py_object = json.load(myFile)
