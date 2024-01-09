@@ -15,6 +15,7 @@ class Student:
         self.age = age
 
     def to_json(self):
+        """dict representation of a Student class"""
         if isinstance(self, (str, int, bool)):
                 return self
         elif isinstance(self, dict):
