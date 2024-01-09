@@ -7,7 +7,8 @@ def class_to_json(obj):
     an object
     Args:
         obj: object of a class
-    Returns: dictionary description with simple data structure 
+    Returns:
+        dictionary description with simple data structure
         for JSON serialization of an object
     """
     if isinstance(obj, (str, int, bool)):
