@@ -9,4 +9,4 @@ def load_from_json_file(filename):
         filename: file to create an object from
     """
     with open(filename, mode="r") as myFile:
-        py_object = json.load(myFile)
+        object = json.load(myFile)
