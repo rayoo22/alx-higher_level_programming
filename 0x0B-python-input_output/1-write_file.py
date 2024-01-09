@@ -17,4 +17,5 @@ def write_file(filename="", text=""):
         readtext = myFile.read()
 
         char_count = len(readtext)
+
         return char_count
