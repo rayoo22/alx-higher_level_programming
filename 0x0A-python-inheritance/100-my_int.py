@@ -3,5 +3,12 @@
 
 
 class MyInt(int):
-    """inherits from integer class"""
-    if type
+    """inverts int operators == and !="""
+
+    def __eq__(self, value):
+        """Overide '==' operator with '!=' behaviour"""
+        return self.real != value
+
+    def __ne__(self, value):
+        """ overide != operator with == behaviour"""
+        return self.real == value
