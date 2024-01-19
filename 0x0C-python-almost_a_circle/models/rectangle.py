@@ -28,7 +28,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setter for width"""
-        if type(self.__width) is not int:
+        if type(self.__width) != int:
             raise TypeError("width must be an integer")
         elif self.__width <= 0:
             raise ValueError("width must be > 0")
@@ -43,7 +43,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """setter for height"""
-        if type(self.__height) is not int:
+        if type(self.__height) != int:
             raise TypeError("height must be an integer")
         elif self.__height <= 0:
             raise ValueError("height must be > 0")
@@ -60,8 +60,8 @@ class Rectangle(Base):
         """x setter"""
         if type(self.__x) is not int:
             raise TypeError("x must be an integer")
-        elif self.__x <= 0:
-            raise ValueError("x must be > 0")
+        elif self.__x < 0:
+            raise ValueError("x must be >= 0")
 
         self.__x = value
 
@@ -75,8 +75,8 @@ class Rectangle(Base):
         """y setter"""
         if type(self.__y) is not int:
             raise TypeError("y must be an integer")
-        elif self.__y <= 0:
-            raise ValueError("y must be > 0")
+        elif self.__y < 0:
+            raise ValueError("y must be >= 0")
 
         self.__y = value
 
@@ -104,19 +104,28 @@ class Rectangle(Base):
         """uses args to print non-keyworded arguments and
         kwargs to print keyworded arguments"""
         if args:
-            if len(args) >= 1:
-                self.__id = args[0]
-            if len(args) >= 2:
-                self.__width = args[1]
-            if len(args) >= 3:
-                self.__height = args[2]
-            if len(args) >= 4:
-                self.__x = args[3]
-            if len(args) >= 5:
-                self.__y = args[4]
+            for k, v in enumerate(args):
+                if k == 0:
+                    self.id = v
+                elif k == 1:
+                    self.width = v
+                elif k == 2:
+                    self.height = v
+                elif k == 3:
+                    self.x = v
+                else:
+                    self.y = v
         else:
-            for key, val in kwargs.items():
-                setattr(self, key, val)
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
         """returning dictionary representation of rectangle object"""
