@@ -38,6 +38,14 @@ class Base:
         with open(filename, "w") as myFile:
             myFile.write(cls.to_json_string(objs))
 
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the JSON string representation of list"""
+        if json_string is None or json_string == []:
+            return []
+        else:
+            return json.loads(json_string)
+
     @classmethod
     def create(cls, **dictionary):
         """this function returns all instances with
