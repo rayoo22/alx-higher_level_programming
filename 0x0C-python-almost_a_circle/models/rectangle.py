@@ -90,10 +90,9 @@ class Rectangle(Base):
         """prints to stdout the Rectangle object creates
         using the character '#'
         """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print(f"#", end="")
-            print()
+        print("\n" * self.__y +
+                "\n".join(" " * self.__x + "#" * self.__width
+                    for i in range(self.__height)))
 
     def __str__(self):
         """string representation of the object created"""
