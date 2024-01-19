@@ -22,6 +22,11 @@ class Square(Rectangle):
         after inheritance, the size of the square
         is given the value of the width or height of
         rectangle class"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
+
         self.width = value
         self.height = value
 
