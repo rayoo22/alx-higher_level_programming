@@ -68,6 +68,19 @@ class Base:
                     writer.writerow([o.id, o.width, o.height, o.x, o.y])
                 if cls.__name__ == "Square":
                     writer.writerow([o.id, o.size, o.x, o.y])
+    @classmethod
+    def load_from_file(cls):
+        """returns all list of instances"""
+        filename = cls.__name__ + ".json"
+        l = []
+        try:
+            with open(filename, 'r') as f:
+                instances = cls.from_json_string(f.read())
+            for i, dic in enumerate(instances):
+                l.append(cls.create(**instances[i]))
+        except:
+            pass
+        return l
 
     @classmethod
     def load_from_file_csv(cls):
