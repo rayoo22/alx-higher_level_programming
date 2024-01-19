@@ -97,13 +97,29 @@ class Rectangle(Base):
 
     def __str__(self):
         """string representation of the object created"""
-        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
-    
-    def update(self, *args):
-        """uses args to print non-keyworded arguments"""
-        for arg in sys.argv:
-            self.__id = arg[1]
-            self.__width = arg[2]
-            self.__height = arg[3]
-            self.__x = arg[4]
-            self.__y = arg[5]
+        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y}
+    - {self.__width}/{self.__height}'
+
+    def update(self, *args, **kwargs):
+        """uses args to print non-keyworded arguments and
+        kwargs to print keyworded arguments"""
+        if args:
+            if len(args) >= 1:
+                self.__id = args[0]
+            if len(args) >= 2:
+                self.__width = args[1]
+            if len(args) >= 3:
+                self.__height = args[2]
+            if len(args) >= 4:
+                self.__x = args[3]
+            if len(args) >= 5:
+                self.__y = args[4]
+        else:
+            for key, val in kwargs.items():
+                setattr(self, key, val)
+
+    def to_dictionary(self):
+        """returning dictionary representation of rectangle object"""
+        return {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y
+                }
