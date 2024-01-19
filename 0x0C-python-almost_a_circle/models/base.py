@@ -49,8 +49,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """this function returns all instances with
-        all attributes set"""
+        """this function returns all instances with all attributes set"""
         if cls.__name__ == "Square":
             dummy = cls(1)
         if cls.__name__ == "Rectangle":
@@ -68,6 +67,7 @@ class Base:
                     writer.writerow([o.id, o.width, o.height, o.x, o.y])
                 if cls.__name__ == "Square":
                     writer.writerow([o.id, o.size, o.x, o.y])
+
     @classmethod
     def load_from_file(cls):
         """returns all list of instances"""
