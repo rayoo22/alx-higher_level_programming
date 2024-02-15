@@ -1,6 +1,6 @@
 -- lists all cities of CALIFORNIA STATE that can be found
 -- in hbtn_0d_usa databsase
-SELECT *
+SELECT hbtn_0d_usa.cities.id, hbtn_0d_usa.cities.name
 FROM hbtn_0d_usa.cities
 WHERE state_id = (
 	SELECT id
