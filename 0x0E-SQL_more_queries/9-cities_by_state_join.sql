@@ -1,6 +1,8 @@
--- lists all cities contained in the database
-SELECT hbtn_0d_usa.cities.id, hbtn_0d_usa.cities.name, hbtn_0d_usa.states.name
-FROM hbtn_0d_usa.cities
-INNER JOIN hbtn_0d_usa.states
-ON hbtn_0d_usa.cities.state_id = hbtn_0d_usa.states.id
-ORDER BY hbtn_0d_usa.cities.id ASC;
+-- lists all cities, displaying cities.id, cities.name, states.name
+-- sorting in asc by cities.id
+-- using one SELECT keyword
+SELECT cities.id, cities.name, states.name
+FROM cities
+INNER JOIN states
+ON cities.state_id = states.id
+ORDER BY cities.id ASC;
