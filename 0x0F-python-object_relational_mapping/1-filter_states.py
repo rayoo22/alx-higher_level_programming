@@ -18,3 +18,5 @@ if __name__ == "__main__":
 
     for n in n_states:
         print(n)
+    cur.close()
+    db.close()
