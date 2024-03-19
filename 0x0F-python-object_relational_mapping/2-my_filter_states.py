@@ -19,5 +19,7 @@ if __name__ == "__main__":
 
         for records in sim_list:
             print(records)
+        cur.close()
+        db.close()
     except MySQLdb.Error as e:
         print("Error:", e)
