@@ -13,12 +13,12 @@ if __name__ == "__main__":
     # create cursor for executing sql statement
     cur = db.cursor()
     # sql statement
-    cur.execute("SELECT * FROM cities ORDER BY cities.id ASC")
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC")
     # fetch results of the executed sql statement
     cities = cur.fetchall()
 
     for city in cities:
-        print(cities)
+        print(city)
 
     cur.close()
     db.close()
