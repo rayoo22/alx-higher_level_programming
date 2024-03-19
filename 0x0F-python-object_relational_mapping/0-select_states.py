@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-
-
-""" script that lists all states from the database hbtn_0e_0_usa
+""" 
+script that lists all states from the database hbtn_0e_0_usa
 takes 3 arguments mysql username, mysql password and database name
 sorts results in ascending order by states.id
 """
+
+
 import MySQLdb
 import sys
 
@@ -17,8 +18,6 @@ try:
 
     for state in list_of_states:
         print(state)
-    cur.close()
-    db.close()
 
 except MySQLdb.Error as e:
     print("Error:", e)
