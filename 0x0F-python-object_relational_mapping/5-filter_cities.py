@@ -22,5 +22,4 @@ if __name__ == "__main__":
     # fetch results of the execution above
     cities_list = cur.fetchall()
 
-    for city in cities_list:
-        print(city)
+    print(', '.join(["{:s}".format(row[0]) for row in cities_list]))
