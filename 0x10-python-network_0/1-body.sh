@@ -1,10 +1,9 @@
 #!/bin/bash
 # sends a GET request to the URL, displays the body of the response
-url="$1"
-http_response=$(curl --silent --write-out "HTTPSTATUS:%{http_code}" -X POST $url)
-http_body=$(echo $https_response |sed -e 's/HTTPSTATUS\:.*//g')
-http_status=$(echo $http_response | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+response=$(curl -s -w "%{http_code}" "$1")
+body=$(echo $response | sed -e 's/[0-9]\{3\}$//')
+status_code=$(echo "$response" | tail -c 4)
 
-if [ $http_status -eq 200 ]; then
-	echo "$http_body"
+if [ "$status_code" -eq 200 ]; then
+	echo "$body"
 fi
