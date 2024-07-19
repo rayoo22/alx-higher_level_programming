@@ -18,7 +18,11 @@ if __name__ == '__main__':
 
     statename = sys.argv[4]
 
-    query = "SELECT * FROM states WHERE states.name = '{}' ORDER BY states.id ASC;".format(statename)
+    query = """
+        SELECT * FROM states
+        WHERE states.name = '{}'
+        ORDER BY states.id ASC;
+        """.format(statename)
 
     cur.execute(query)
 
