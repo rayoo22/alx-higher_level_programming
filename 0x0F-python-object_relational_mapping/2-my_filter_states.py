@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     query = """
         SELECT * FROM states
-        WHERE states.name = '{}'
+        WHERE BINARY states.name = '{}'
         ORDER BY states.id ASC;
         """.format(statename)
 
